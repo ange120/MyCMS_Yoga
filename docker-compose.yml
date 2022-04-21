@@ -1,0 +1,49 @@
+version: '3'
+
+services:
+  web:
+    container_name: nginxCms
+    build:
+      context: .
+      dockerfile: docker/nginx/Dockerfile
+    ports:
+      - "8085:80"
+    volumes:
+      - ./site/yoga:/app/
+    links:
+      - php
+
+  php:
+    container_name: php_app
+    build:
+      context: .
+      dockerfile: docker/php/Dockerfile
+    volumes:
+      - ./site/yoga:/app/
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    restart: ${RESTART_MODE}
+    ports:
+      - "8001:80"
+    environment:
+      - PMA_ARBITRARY=0
+      - PMA_HOSTS=mysql
+    depends_on:
+      - mysql
+
+
+  mysql:
+    image: mysql:5.7
+    container_name: mysql
+    restart: unless-stopped
+    command: --default-authentication-plugin=mysql_native_password
+    command: --innodb_use_native_aio=0
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./data/mysql:/var/lib/mysql
+    # пароль для root пользователя
+    environment:
+      MYSQL_ROOT_PASSWORD: secret

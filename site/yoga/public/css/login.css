@@ -1,0 +1,183 @@
+* {
+    box-sizing: border-box;
+}
+
+header {
+    max-width: 1140px;
+    margin: 0 auto;
+    display: grid;
+}
+
+a {
+    text-decoration: none;
+}
+
+.logoLoginPage {
+    font-family: PT Serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 64px;
+    line-height: 0;
+    color: #39374D;
+    margin-bottom: 0.5em;
+    text-transform: uppercase;
+}
+
+.contentLoginPage{
+    grid-template-columns: 60% 40%;
+    max-width: 1140px;
+    margin: 0 auto;
+    display: grid;
+}
+
+.table {
+    width: 43.5em;;
+    height: 44em;
+    border-radius: 30px 0;
+    background: #ffffff;
+    box-shadow: -5px 5px 30px rgba(0, 0, 0, 0.25);
+}
+a {
+    text-decoration: none;
+    color: #EEEEEE;
+}
+a:hover {
+    cursor: default;
+    text-decoration: none;
+}
+.messages {
+    display: flex;
+    justify-content: center;
+    background-color: #ff0000;
+    text-align: center;
+    padding: 5px;
+    margin: 5px 0 15px 0;
+    color: #000;
+    font-family: PT Serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+}
+.toRegister{
+    margin-left: 15%;
+    margin-top: -5%;
+}
+.titleLoginPage {
+    font-family: PT Serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 48px;
+    line-height: 40px;
+    color: #39374D;
+    text-align: center;
+}
+
+.login-conteinerLoginPage {
+    width: 40%;
+    justify-self: center;
+    margin: 0 auto;
+    align-self: center;
+}
+
+input[type=email] {
+    width: 100%;
+    border-radius: 30px 0;
+    padding: 20px;
+    background: 0;
+    border: 2px solid #8878AF;
+    box-sizing: border-box;
+    font-size: larger;
+}
+
+.emailLoginPage {
+    margin: 0 -14em 1.5em;
+}
+
+.password-conteinerLoginPage {
+    width: 40%;
+    justify-self: center;
+    margin: 0 auto 2em;
+    align-self: center;
+}
+
+input[type=password] {
+    width: 100%;
+    border-radius: 30px 0;
+    padding: 20px;
+    background: 0;
+    border: 2px solid #8878AF;
+    box-sizing: border-box;
+    font-size: larger;
+}
+
+.passwordLoginPage {
+    margin: 0 -14em 1.5em;
+}
+
+.buttonLoginPage {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 4em;
+}
+
+.textButtonLogin {
+    width: 70%;
+    padding: 1em;
+    border-radius: 30px 0;
+    filter: drop-shadow(6px 6px 15px rgba(63, 61, 86, 0.3));
+    background: #8878AF;
+    border: 1px solid #FFFFFF;
+    box-sizing: border-box;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    font-family: PT Sans;
+    font-style: normal;
+    text-align: center;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 10px;
+}
+
+.textUnderButtonLoginPage {
+    font-family: PT Serif;
+    font-style: normal;
+    font-weight: normal;
+    text-align: center;
+    font-weight: normal;
+    font-size: 24px;
+    color: #39374D;
+}
+
+.infoAndLinks {
+    display: grid;
+}
+
+.imgsLogins {
+    gap: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.registrationLoginPage {
+    text-align: center;
+}
+
+.konto {
+    font-family: PT Serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 32px;
+    text-decoration-line: underline;
+    color: #8878AF;
+}
+
+.registration {
+    font-family: PT Serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 32px;
+    text-decoration-line: underline;
+    color: #39374D;
+}

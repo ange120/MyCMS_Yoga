@@ -1,0 +1,409 @@
+* {
+    box-sizing: border-box;
+}
+
+header {
+    max-width: 1140px;
+    margin: 0 auto;
+    display: grid;
+}
+
+body {
+    max-width: 1140px;
+    margin: 0 auto;
+    display: grid;
+}
+
+a {
+    text-decoration: none;
+}
+
+.logoRegistrationPage {
+    font-family: PT Serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 64px;
+    line-height: 0;
+    color: #39374D;
+    text-transform: uppercase;
+}
+.messages {
+    display: flex;
+    justify-content: center;
+    background-color: #ff0000;
+    text-align: center;
+    padding: 5px;
+    margin: 5px 0 15px 0;
+    color: #000;
+    font-family: PT Serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+}
+.toRegister{
+    margin-left: 15%;
+    margin-top: -5%;
+}
+a {
+    text-decoration: none;
+    color: #EEEEEE;
+}
+a:hover {
+    cursor: default;
+    text-decoration: none;
+}
+.girlReg {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 3em;
+}
+
+.tableRegPage {
+    width: content-box;
+    display: grid;
+    border-radius: 30px 0;
+    background: #FFFFFF;
+    box-shadow: -5px 5px 30px rgba(0, 0, 0, 0.25);
+}
+
+.titleTable {
+    font-family: PT Serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 48px;
+    text-align: center;
+    padding: 1.5em;
+    margin: 0;
+    color: #39374D;
+}
+
+.name-conteinerRegPage {
+    display: inline;
+    width: 30%;
+}
+
+input.conteinerNameRegPage[type=text] {
+    width: 90%;
+    border-radius: 30px 0;
+    padding: 20px;
+    border: 2px solid #8878AF;
+    font-size: larger;
+}
+
+.firstLine {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 40% 30%;
+    margin-bottom: 1.5em;
+}
+
+.surname-conteinerRegPage {
+    display: inline;
+    width: 100%;
+    text-align: center;
+    margin-bottom:  1.5em;
+}
+
+input.conteinerSurRegPage[type=text] {
+    width: 70%;
+    border-radius: 30px 0;
+    padding: 20px;
+    border: 2px solid #8878AF;
+    font-size: larger;
+}
+
+.surnameRegPage {
+    display: flex;
+    justify-content: center;
+}
+
+.birthday-conteinerRegPage {
+    display: inline;
+    width: 100%;
+    text-align: center;
+}
+
+input.conteinerbirthdayRegPage[type=date] {
+    width: 70%;
+    border-radius: 30px 0;
+    padding: 20px;
+    border: 2px solid #8878AF;
+    font-size: larger;
+}
+
+.birthdayRegPage {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5em;
+}
+
+.forthLine {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 40% 30%;
+    margin-bottom: 1.5em;
+}
+
+.weight-conteinerRegPage {
+    display: inline;
+    width: 100%;
+}
+
+input.conteinerWeightRegPage[type=text] {
+    width: 90%;
+    border-radius: 30px 0;
+    padding: 20px;
+    border: 2px solid #8878AF;
+    font-size: larger;
+}
+
+.weight {
+    display: flex;
+    justify-content: center;
+}
+
+.forthLine {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 40% 30%;
+    margin-bottom: 1.5em;
+}
+
+.height-conteinerRegPage {
+    display: inline;
+    width: 100%;
+}
+
+input.conteinerHeightRegPage[type=text] {
+    width: 100%;
+    border-radius: 30px 0;
+    padding: 20px;
+    border: 2px solid #8878AF;
+    font-size: larger;
+}
+
+.height {
+    display: flex;
+    justify-content: center;
+}
+
+.plecList {
+    display: flex;
+    justify-content: center;
+}
+
+.conteinerPlecList {
+    display: inline;
+    width: 100%;
+}
+
+form.plec {
+    width: 100%;
+    border-radius: 30px 0;
+    padding: 20px;
+    border: 2px solid #8878AF;
+    font-size: larger;
+}
+
+.login-conteinerRegPage {
+    display: inline;
+    width: 100%;
+    text-align: center;
+    margin-bottom:  1.5em;
+}
+
+input.login-conteiner-formRegPage[type=email] {
+    width: 70%;
+    border-radius: 30px 0;
+    padding: 20px;
+    border: 2px solid #8878AF;
+    font-size: larger;
+}
+
+.emailRegPage {
+    display: flex;
+    justify-content: center;
+}
+
+.password-conteinerRegPage {
+    display: inline;
+    width: 100%;
+    text-align: center;
+    margin-bottom:  1.5em;
+}
+
+input.password-conteiner-formRegPage[type=password] {
+    width: 70%;
+    border-radius: 30px 0;
+    padding: 20px;
+    border: 2px solid #8878AF;
+    font-size: larger;
+}
+
+.passwordRegPage {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3em;
+}
+
+.buttonRegLogin {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 4em;
+}
+
+.textButtonRegLogin {
+    width: 70%;
+    padding: 1em;
+    border-radius: 30px 0;
+    filter: drop-shadow(6px 6px 15px rgba(63, 61, 86, 0.3));
+    background: #8878AF;
+    border: 1px solid #FFFFFF;
+    box-sizing: border-box;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    font-family: PT Sans;
+    font-style: normal;
+    text-align: center;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 10px;
+    margin-bottom: 10px;
+}
+
+.infoAndLinksRegpage {
+    display: grid;
+}
+
+.textUnderButtonRegPage {
+    font-family: PT Serif;
+    font-style: normal;
+    font-weight: normal;
+    text-align: center;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 10px;
+    color: #39374D;
+    margin-bottom: -0.5em;
+}
+
+.imgsReg {
+    gap: 50px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3em;
+}
+
+/*------------------------------------------------------*/
+
+footer {
+    max-width: 1140px;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.titleFooterSettings {
+    font-family: PT Serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 64px;
+    line-height: 85px;
+    color: #39374D;
+    padding: 1.5em 0 0;
+    text-align: center;
+    justify-content: center;
+    text-transform: uppercase;
+}
+
+.contactsSettings {
+    display: grid;
+    gap: 4em;
+    justify-content: center;
+    grid-template-columns: 20% 10% 20%;
+}
+
+.profileSettings {
+    font-family: PT Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 31px;
+    color: #39374D;
+    text-align: center;
+}
+
+.aboutUsSettings {
+    font-family: PT Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 31px;
+    text-align: center;
+    color: #39374D;
+}
+
+.contactsSettings_1 {
+    font-family: PT Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 31px;
+    text-align: center;
+    color: #39374D;
+    margin-bottom: 1em;
+}
+
+.mediaSettings {
+    display: flex;
+    justify-content: center;
+    gap: 4em;
+}
+
+.termAndPrivacySettings {
+    display: flex;
+    margin-bottom: 1em;
+    justify-content: center;
+    gap: 5em;
+}
+
+.termSettings {
+    font-family: PT Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 23px;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.75px;
+    text-transform: uppercase;
+    color: #39374D;
+}
+
+.privacySettings {
+    font-family: PT Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 23px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.75px;
+    text-transform: uppercase;
+    color: #39374D;
+}
+
+.copyrigthSettings {
+    font-family: PT Sans;
+    font-style: normal;
+    font-weight: normal;
+    padding: 0 0 2em;
+    font-size: 18px;
+    line-height: 23px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.75px;
+    text-transform: uppercase;
+    margin-left: 7rem;
+}
