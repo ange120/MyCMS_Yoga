@@ -16,9 +16,9 @@ class DefaultController extends AppController {
     {
         $this->render('info_En');
     }
-    public function info_Ru()
+    public function info()
     {
-        $this->render('info_Ru');
+        $this->render('info');
     }
     public function registration()
     {
