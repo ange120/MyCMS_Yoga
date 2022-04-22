@@ -1,24 +1,23 @@
 <?php
 
 require_once 'AppController.php';
+require_once __DIR__.'/../models/Localization.php';
 
 class DefaultController extends AppController {
 
     public function index()
     {
-        $this->render('info_En');
+        $localFields = new Localization();
+        $this->render('info', ['localController' => $localFields->checkFieldsLocalization($_SESSION['loc']) ]);
     }
     public function login()
     {
         $this->render('login');
     }
-    public function info_En()
-    {
-        $this->render('info_En');
-    }
     public function info()
     {
-        $this->render('info');
+        $localFields = new Localization();
+        $this->render('info', ['localController' => $localFields->checkFieldsLocalization($_SESSION['loc']) ]);
     }
     public function registration()
     {

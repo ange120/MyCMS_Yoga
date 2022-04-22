@@ -33,4 +33,62 @@ class LocalRepository extends Repository
 
         return $titlePageEn;
     }
+
+    public function getPageHeaderRu ()
+    {
+        $pageName ="header";
+        $stmtToPage = $this->database->prepare('SELECT page_location.text_ru
+            FROM bind_page
+           RIGHT OUTER JOIN page_location ON bind_page.id = page_location.id_page
+            WHERE name_page = :name_page');
+
+        $stmtToPage->bindParam(':name_page', $pageName, PDO::PARAM_STR);
+        $stmtToPage->execute();
+        $titlePageEn = $stmtToPage->fetchAll(PDO::FETCH_COLUMN, 0);
+
+        return $titlePageEn;
+    }
+    public function getPageHeaderEn ()
+    {
+        $pageName ="header";
+        $stmtToPage = $this->database->prepare('SELECT page_location.text_en
+            FROM bind_page
+           RIGHT OUTER JOIN page_location ON bind_page.id = page_location.id_page
+            WHERE name_page = :name_page');
+
+        $stmtToPage->bindParam(':name_page', $pageName, PDO::PARAM_STR);
+        $stmtToPage->execute();
+        $titlePageEn = $stmtToPage->fetchAll(PDO::FETCH_COLUMN, 0);
+
+        return $titlePageEn;
+    }
+
+    public function getPageFooterRu ()
+    {
+        $pageName ="footer";
+        $stmtToPage = $this->database->prepare('SELECT page_location.text_ru
+            FROM bind_page
+           RIGHT OUTER JOIN page_location ON bind_page.id = page_location.id_page
+            WHERE name_page = :name_page');
+
+        $stmtToPage->bindParam(':name_page', $pageName, PDO::PARAM_STR);
+        $stmtToPage->execute();
+        $titlePageEn = $stmtToPage->fetchAll(PDO::FETCH_COLUMN, 0);
+
+        return $titlePageEn;
+    }
+    public function getPageFooterEn ()
+    {
+        $pageName ="footer";
+        $stmtToPage = $this->database->prepare('SELECT page_location.text_en
+            FROM bind_page
+           RIGHT OUTER JOIN page_location ON bind_page.id = page_location.id_page
+            WHERE name_page = :name_page');
+
+        $stmtToPage->bindParam(':name_page', $pageName, PDO::PARAM_STR);
+        $stmtToPage->execute();
+        $titlePageEn = $stmtToPage->fetchAll(PDO::FETCH_COLUMN, 0);
+
+        return $titlePageEn;
+    }
 }
