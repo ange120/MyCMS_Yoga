@@ -3,6 +3,7 @@
 require_once 'app/controllers/DefaultController.php';
 require_once 'app/controllers/SecurityController.php';
 require_once 'app/controllers/LocalizationController.php';
+require_once 'app/controllers/NewsController.php';
 
 //Test
 class Router {

@@ -42,7 +42,7 @@
                     </div>
                 </form>
                 <button class="textButtonLogin toRegister" ><a href="registration">Registration</a></button>
-                <button class="textButtonLogin toRegister" style="margin-top: 2rem" ><a href="info_En">Back</a></button>
+                <button class="textButtonLogin toRegister" style="margin-top: 2rem" ><a href="info">Back</a></button>
             </div>
         </div>
     </section>

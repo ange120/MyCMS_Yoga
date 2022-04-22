@@ -11,7 +11,7 @@ class RoleRepository extends Repository
      */
     public function getNameById (int $id)
     {
-        $stmt = $this->database->prepare('SELECT name  FROM user_role WHERE `id` = :id');
+        $stmt = $this->database->prepare('SELECT *  FROM user_role WHERE `id` = :id');
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
         $stmt->execute();
         $userRole = $stmt->fetch(PDO::FETCH_ASSOC);

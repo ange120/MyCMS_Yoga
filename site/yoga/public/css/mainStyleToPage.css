@@ -34,7 +34,11 @@ a {
     display: flex;
     align-items: center;
 }
-
+.menu {
+    z-index: 25;
+    justify-self: end;
+    text-align: left;
+}
 .menuActivity {
     justify-self: end;
     text-align: left;
@@ -200,4 +204,8 @@ footer {
     letter-spacing: 0.75px;
     text-transform: uppercase;
     color: #39374D;
+}
+.localSelect {
+    margin-top: -6rem;
+    margin-left: 25rem;
 }

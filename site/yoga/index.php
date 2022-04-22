@@ -10,15 +10,16 @@ $path = parse_url( $path, PHP_URL_PATH);
  */
 Router::get('', 'DefaultController');
 Router::get('registration', 'DefaultController');
-Router::get('info_En', 'DefaultController');
-Router::get('info_Ru', 'DefaultController');
+Router::get('info', 'DefaultController');
+Router::get('news', 'NewsController');
 Router::get('profile', 'ProfileController');
 Router::get('errorPage', 'DefaultController');
 Router::get('adminIndex', 'DefaultController');
 Router::get('articlesIndex', 'DefaultController');
 
 Router::get('localRu', 'LocalizationController');
-Router::get('localEn', 'LocalizationController');
+Router::post('localEn', 'LocalizationController');
+Router::post('localOnload', 'LocalizationController');
 
 Router::get('logOut', 'SecurityController');
 

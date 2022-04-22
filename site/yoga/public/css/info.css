@@ -78,6 +78,7 @@ a:hover {
 }
 
 .menu {
+    z-index: 25;
     justify-self: end;
     text-align: left;
 }
