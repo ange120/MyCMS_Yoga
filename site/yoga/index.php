@@ -12,6 +12,7 @@ Router::get('', 'DefaultController');
 Router::get('registration', 'DefaultController');
 Router::get('info', 'DefaultController');
 Router::get('news', 'NewsController');
+Router::get('pageNewsContent', 'NewsController');
 Router::get('profile', 'ProfileController');
 Router::get('errorPage', 'DefaultController');
 Router::get('adminIndex', 'DefaultController');
