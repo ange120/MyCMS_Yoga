@@ -35,7 +35,7 @@
     </div>
 
     <footer>
-        <p>made by <a href="https://codepen.io/juliepark"> julie</a> ♡
+
     </footer>
 </main>
 <script>

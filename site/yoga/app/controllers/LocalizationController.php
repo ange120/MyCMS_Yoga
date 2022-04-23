@@ -4,12 +4,14 @@ require_once 'AppController.php';
 require_once 'DefaultController.php';
 require_once __DIR__.'/../models/Localization.php';
 require_once __DIR__.'/../repository/LocalRepository.php';
+require_once __DIR__.'/../repository/LocalizationRepository.php';
 
 class LocalizationController extends AppController
 {
     public function localRu()
     {
-        $_SESSION['loc'] = 'ru';
+        $LocalizationRepository = new LocalizationRepository();
+        $LocalizationRepository->updateLocalization('ru');
         $data = $this->PostDataJson();
         $local = new LocalRepository();
 
@@ -21,7 +23,8 @@ class LocalizationController extends AppController
 
     public function localEn()
     {
-        $_SESSION['loc'] = 'en';
+        $LocalizationRepository = new LocalizationRepository();
+        $LocalizationRepository->updateLocalization('en');
 
         $data = $this->PostDataJson();
         $local = new LocalRepository();
@@ -34,10 +37,15 @@ class LocalizationController extends AppController
 
     public function localOnload ()
     {
-        if($_SESSION['loc'] == 'en'){
+
+        $LocalizationRepository = new LocalizationRepository();
+
+        $local = $LocalizationRepository->getLocalization();
+
+        if($local == 'en'){
             $this->localEn();
         }
-        if($_SESSION['loc'] == 'ru'){
+        if($local == 'ru'){
             $this->localRu();
         }
     }

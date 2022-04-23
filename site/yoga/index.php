@@ -16,6 +16,7 @@ Router::get('profile', 'ProfileController');
 Router::get('errorPage', 'DefaultController');
 Router::get('adminIndex', 'DefaultController');
 Router::get('articlesIndex', 'DefaultController');
+Router::get('needToLogin', 'NeedToLoginController');
 
 Router::get('localRu', 'LocalizationController');
 Router::post('localEn', 'LocalizationController');

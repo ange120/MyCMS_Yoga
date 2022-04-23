@@ -60,6 +60,7 @@
     display: inline-block;
 }
 .blog-card .details .author:before {
+    color: #EEEEEE;
     font-family: FontAwesome;
     margin-right: 10px;
     content: "\f007";
@@ -105,7 +106,7 @@
     text-align: right;
 }
 .blog-card .description .read-more a {
-    color: #5ad67d;
+    color: #8878AF;
     display: inline-block;
     position: relative;
 }
@@ -132,7 +133,7 @@
     content: "";
     position: absolute;
     height: 5px;
-    background: #5ad67d;
+    background: #8878AF;
     width: 35px;
     top: -0.75rem;
     border-radius: 3px;
