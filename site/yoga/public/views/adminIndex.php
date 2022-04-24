@@ -17,13 +17,13 @@
             <h2>John D.</h2>
         </header>
         <ul>
-            <li tabindex="0" class="icon-dashboard"><span>Dashboard</span></li>
-            <li tabindex="0" class="icon-customers"><span>Customers</span></li>
+            <li tabindex="0" class="icon-dashboard"><span>News</span></li>
+            <li tabindex="0" class="icon-customers"><span>categories</span></li>
+            <li tabindex="0" class="icon-settings"><span>Article</span></li>
             <li tabindex="0" class="icon-users"><span>Users</span></li>
-            <li tabindex="0" class="icon-settings"><span>Settings</span></li>
+            <li tabindex="0" class="icon-Log-out"><span><a href="/logOut">Log out</a></span></li>
         </ul>
     </nav>
-
     <main>
         <div class="helper">
             RESIZE THE WINDOW

@@ -37,11 +37,9 @@ class SecurityController extends AppController
         $_SESSION['user'] = $user->getUuid();
 
         if($user->getRole() == 1){
-            $_SESSION['loc'] = 'en';
             $_SESSION['admin'] = 1;
             $this->locateReturn('adminIndex');
         }
-        $_SESSION['loc'] = 'en';
         $this->locateReturn('articlesIndex');
     }
 
@@ -58,7 +56,6 @@ class SecurityController extends AppController
         $user = $userRepository->createUser($_POST);
 
         $_SESSION['user'] = $user;
-        $_SESSION['loc'] = 'en';
         $this->returnInfo(['status'=>200]);
     }
 

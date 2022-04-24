@@ -1,18 +1,30 @@
 <?php
 
 require_once 'AppController.php';
-require_once __DIR__ . '/../models/Localization.php';
 require_once __DIR__ . '/../repository/LocalizationRepository.php';
+require_once __DIR__ . '/../repository/LocalRepository.php';
 
 class NeedToLoginController extends AppController
 {
     public function needToLogin ()
     {
-        $LocalizationRepository = new LocalizationRepository();
-        $Localization = new Localization();
+        return $this->render('needToLogin');
+    }
+    public function textByNeedToLogin ()
+    {
+        $arrayKey = ['head','text','button'];
 
+        $LocalizationRepository = new LocalizationRepository();
+        $LocalRepository = new LocalRepository();
         $local = $LocalizationRepository->getLocalization();
 
-        return $this->render('needToLogin');
+        if($local == 'ru'){
+            $pageLocal = $LocalRepository ->getPageRuByURL('text_needToLogin');
+        }else{
+            $pageLocal = $LocalRepository ->getPageEnByURL('text_needToLogin');
+        }
+        $result = array_combine($arrayKey, explode("%", $pageLocal[0])) ;
+
+        return $this->returnInfo(['pageText'=>$result]);
     }
 }

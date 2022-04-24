@@ -18,10 +18,12 @@ Router::get('errorPage', 'DefaultController');
 Router::get('adminIndex', 'DefaultController');
 Router::get('articlesIndex', 'DefaultController');
 Router::get('needToLogin', 'NeedToLoginController');
+Router::get('textByNeedToLogin', 'NeedToLoginController');
+Router::get('contact', 'ContactUsController');
+Router::get('textByContactUs', 'ContactUsController');
 
-Router::get('localRu', 'LocalizationController');
-Router::post('localEn', 'LocalizationController');
-Router::post('localOnload', 'LocalizationController');
+
+
 
 Router::get('logOut', 'SecurityController');
 
@@ -31,6 +33,9 @@ Router::get('logOut', 'SecurityController');
  */
 Router::post('login', 'SecurityController');
 Router::post('registrationUser', 'SecurityController');
+Router::post('localEn', 'LocalizationController');
+Router::post('localRu', 'LocalizationController');
+Router::post('localOnload', 'LocalizationController');
 
 
 Router::run($path);

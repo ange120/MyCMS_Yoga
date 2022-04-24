@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', event => {
     } else {
         page = page.substr(1)
     }
-
     send_form(page, 'localOnload')
 })
 
