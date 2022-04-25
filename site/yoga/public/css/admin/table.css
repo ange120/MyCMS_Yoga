@@ -125,3 +125,10 @@ h2{
         text-align: center;
     }
 }
+.imgToTable{
+    width: 40%;
+    height: 40%;
+}
+#myimage{
+    width: 60%;
+}

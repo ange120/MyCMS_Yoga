@@ -28,6 +28,7 @@ Router::get('textByContactUs', 'ContactUsController');
 
 Router::get('adminIndex', 'AdminController');
 Router::get('adminNews', 'AdminController');
+Router::get('adminUploadPhoto', 'AdminController');
 
 Router::get('needToLogin', 'NeedToLoginController');
 Router::get('textByNeedToLogin', 'NeedToLoginController');
@@ -53,6 +54,8 @@ Router::post('getNewsToUpdate', 'AdminController');
 Router::post('updateNews', 'AdminController');
 Router::post('AddNews', 'AdminController');
 Router::post('deleteArticleNews', 'AdminController');
+
+Router::post('adminAddNewPhoto', 'AdminController');
 
 Router::run($path);
 
