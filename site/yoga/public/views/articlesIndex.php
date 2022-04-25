@@ -1,43 +1,32 @@
-<?php
-include "userInfo.php";
-?>
 <!DOCTYPE html>
 
 <head>
+    <link rel="stylesheet" type="text/css" href="public/css/info.css">
+    <link rel="stylesheet" type="text/css" href="public/css/news.css">
     <link rel="stylesheet" type="text/css" href="public/css/mainStyleToPage.css">
-    <link rel="stylesheet" type="text/css" href="public/css/menuUser.css">
     <title>Yoga</title>
     <link rel="icon" href="public/img/yoga.ico" type="image/x-icon">
-    <?php include ('linkToPage.php')?>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+            integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+            crossorigin="anonymous"></script>
+    <script src="public/js/langOnLoad.js"></script>
 </head>
 
 
 <body>
-<main>
-    <section style="
-    background-image: url(public/img/girl.svg);
-    background-repeat: no-repeat;
-    background-position-x: 80%;
-    background-position-y: 75%;
-">
-        <?php include ('header.php'); ?>
+<div class="head">
 
-<!--        <div class="wrapper">-->
-<!--            <div class="blog_post">-->
-<!--                <div class="img_pod">-->
-<!--                    <img src="https://pbs.twimg.com/profile_images/890901007387025408/oztASP4n.jpg" alt="random image">-->
-<!--                </div>-->
-<!--                <div class="container_copy">-->
-<!--                    <h3>12 January 2019</h3>-->
-<!--                    <h1>CSS Positioning</h1>-->
-<!--                    <p>The position property specifies the type of positioning method used for an element (static, relative, absolute, fixed, or sticky).</p>-->
-<!--                </div>-->
-<!--                <a class="btn_primary" href='#'>Read More</a>-->
-<!--            </div>-->
-<!--        </div>-->
-
-
-
+</div>
+<div class="localSelect">
+    <select class="dropdown" id="langOnLoad">
+        <?php foreach ($localController as $key => $value):?>
+            <option  value="<?=$key?>"><?=$value?></option>
+        <?php endforeach; ?>
+    </select>
+</div>
+<main class="mainBloc">
 </main>
-<?php include ('footer.php');?>
+<div class="footerOnLoad">
+</div>
+
 </body>

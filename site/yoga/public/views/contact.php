@@ -9,7 +9,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.js"
             integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
             crossorigin="anonymous"></script>
-<!--    <script src="public/js/langOnLoad.js"></script>-->
+    <script src="public/js/langOnLoad.js"></script>
 </head>
 
 
@@ -25,23 +25,9 @@
     </select>
 </div>
 <main class="mainBloc">
-    <form>
-        <input name="name" type="text" class="feedback-input" placeholder="Name" />
-        <input name="email" type="text" class="feedback-input" placeholder="Email" />
-        <textarea name="text" class="feedback-input" placeholder="Comment"></textarea>
-        <input type="submit" value="SUBMIT"/>
-    </form>
 
-<script>
-    function addClass() {
-        document.body.classList.add("sent");
-    }
-
-        sendLetter.addEventListener("click", addClass);
-
-</script>
 </main>
-<div class="footerOnLoad" style="margin-top: 20rem;">
+<div class="footerOnLoad" >
 </div>
 
 </body>

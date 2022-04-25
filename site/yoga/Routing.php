@@ -6,6 +6,8 @@ require_once 'app/controllers/LocalizationController.php';
 require_once 'app/controllers/NewsController.php';
 require_once 'app/controllers/NeedToLoginController.php';
 require_once 'app/controllers/ContactUsController.php';
+require_once 'app/controllers/CategoriesController.php';
+require_once 'app/controllers/AdminController.php';
 
 //Test
 class Router {

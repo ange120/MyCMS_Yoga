@@ -4,53 +4,74 @@ function getContentToPage() {
         dataType: 'json',
         url: '/textByContactUs',
         success: function (data) {
-            mainPage(data.pageText.head, data.pageText.text, data.pageText.name,data.pageText.email,data.pageText.button,data.pageText.info)
+            mainPage(data.pageText.title, data.pageText.name, data.pageText.email,data.pageText.info,data.pageText.button)
         },
         error: function (logError) {
             console.log(logError)
         }
     });
 }
-function mainPage(head, text,  name, email, button, info) {
+
+function sendContact() {
+    var form = $('#contactFormToSend');
+    var msg = form.serialize();
+    $.ajax({
+        type: 'POST',
+        dataType: 'json',
+        url: '/contactUsForm',
+        data: msg,
+        success: function(data) {
+            console.log(data)
+            afterInfo(data.text)
+        },
+        error:  function(logError){
+            console.log(logError)
+        }
+    });
+}
+
+function mainPage(title,name, email,info ,button) {
     let viewDiv = document.querySelector('.mainBloc')
 
     viewDiv.innerHTML = `
-<form>
-<div class="wrapper centered">
-        <article class="letter">
-            <div class="side">
-                <h1>${head}</h1>
-                <p>
-                    <textarea placeholder="${text}"></textarea>
-                </p>
-            </div>
-            <div class="side">
-                <p>
-                    <input type="text" placeholder="${name}" >
-                </p>
-                <p>
-                    <input type="email" placeholder="${email}" >
-                </p>
-                <p>
-                    <button id="sendLetter" onclick="Send()">${button}</button>
-                </p>
-            </div>
-        </article>
-        <div class="envelope front"></div>
-        <div class="envelope back"></div>
-    </div>
-    <p class="result-message centered">${info}</p>
+<h2 class="infoContactForm">${title}</h2>
+    <form method="post"  onsubmit="return validContactForm();" name="contactForm" id="contactFormToSend">
+        <input name="name" type="text" class="feedback-input" placeholder="${name}" />
+        <input name="email" type="text" class="feedback-input" placeholder="${email}" />
+        <textarea name="info" class="feedback-input" placeholder="${info}"></textarea>
+        <input type="button" value="${button}" onclick="validContactForm()"/>
     </form>
 
 `;
 }
-function addClass() {
-    document.body.classList.add("sent");
-}
-function Send ()
-{
-    sendLetter.addEventListener("click", addClass);
-}
 
+function validContactForm ( )
+{
+
+    let valid = true;
+
+    if ( document.contactForm.name.value == "" ){
+        valid = false;
+    }
+    if(document.contactForm.email.value == ""){
+        valid = false;
+    }
+    if(document.contactForm.info.value == ""){
+        valid = false;
+    }
+    if(valid === true){
+        sendContact()
+    }
+    return valid
+}
+function afterInfo(text)
+{
+    let viewDiv = document.querySelector('.mainBloc')
+
+    viewDiv.innerHTML = `
+<h2 class="infoContactForm"> ${text} <h2>
+
+`;
+}
 
 getContentToPage()

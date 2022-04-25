@@ -30,13 +30,12 @@ class DefaultController extends AppController {
         $this->render('registration');
     }
 
-    public function adminIndex()
-    {
-        $this->render('adminIndex');
-    }
     public function articlesIndex()
     {
-        $this->render('articlesIndex');
+        $LocalizationRepository = new LocalizationRepository();
+        $Localization = new Localization();
+        $local = $LocalizationRepository->getLocalization();
+        $this->render('articlesIndex', ['localController' => $Localization->checkFieldsLocalization($local) ]);
     }
     public function errorPage()
     {
