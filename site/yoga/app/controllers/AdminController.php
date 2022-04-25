@@ -4,6 +4,7 @@ require_once 'AppController.php';
 require_once __DIR__ . '/../repository/UserRepository.php';
 require_once __DIR__ . '/../repository/NewsArticleRepository.php';
 require_once __DIR__ . '/../repository/Repository.php';
+require_once __DIR__ . '/../repository/UploadPhotoRepository.php';
 
 class AdminController extends AppController
 {
@@ -90,4 +91,29 @@ class AdminController extends AppController
         $this->returnInfo(['status' => 200]);
     }
 
+    /*UploadPhoto*/
+
+    public function adminUploadPhoto()
+    {
+        $this->checkAdminStatus();
+
+        $UserRepository = new UserRepository();
+        $UploadPhotoRepository = new UploadPhotoRepository();
+
+        $user = $UserRepository->getInfoUserByUuid($_SESSION['user']);
+        $photo = $UploadPhotoRepository->checkPhoto();
+
+        $this->render('adminUploadPhoto', ['userName' => $user['name'], 'photo' => $photo]);
+    }
+
+    public function adminAddNewPhoto ()
+    {
+        $data = $this->PostDataJson();
+
+        $UploadPhotoRepository = new UploadPhotoRepository();
+
+        $UploadPhotoRepository->addNewPhoto($data['photo'],$data['name']);
+
+        $this->returnInfo(['status' => 200]);
+    }
 }
