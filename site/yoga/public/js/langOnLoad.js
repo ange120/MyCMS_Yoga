@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', event => {
     } else {
         page = page.substr(1)
     }
-
     send_form(page, 'localOnload')
 })
 
@@ -16,11 +15,16 @@ function send_form(url, location) {
         url: location,
         data: {"page": url},
         success: function (data) {
-            console.log(data)
+            // console.log(data)
             pageHeader(data.header)
-            pageContentLocal(data.page)
+            if(data.page.indexOf('includeScript') !== -1){
+                let script = data.page.split(':')[1];
+                include("public/js/"+script);
+            }else {
+                pageContentLocal(data.page)
+            }
             pageFooter(data.footer)
-            include("public/js/tet.js");
+            include("public/js/changeLocation.js");
         },
         error: function (logError) {
             console.log(logError)
@@ -31,7 +35,6 @@ function send_form(url, location) {
 function pageContentLocal(page) {
     let viewDiv = document.querySelector('.mainBloc')
     viewDiv.innerHTML = page;
-
 }
 
 function pageHeader(header) {

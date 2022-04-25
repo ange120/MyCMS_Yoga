@@ -1,6 +1,3 @@
-<?php
-
-?>
 <!DOCTYPE html>
 
 <head>
@@ -14,20 +11,20 @@
     <nav class="menu" tabindex="0">
         <div class="smartphone-menu-trigger"></div>
         <header class="avatar">
-            <h2>John D.</h2>
+            <h2>Welcome: <?=$userName?></h2>
         </header>
         <ul>
-            <li tabindex="0" class="icon-dashboard"><span>Dashboard</span></li>
-            <li tabindex="0" class="icon-customers"><span>Customers</span></li>
+            <li tabindex="0" class="icon-dashboard"><span><a href="/adminNews">News</a></span></li>
+            <li tabindex="0" class="icon-customers"><span>categories</span></li>
+            <li tabindex="0" class="icon-settings"><span>Article</span></li>
             <li tabindex="0" class="icon-users"><span>Users</span></li>
-            <li tabindex="0" class="icon-settings"><span>Settings</span></li>
+            <li tabindex="0" class="icon-icon-uploadPhoto"><span><a href="/adminNews">Upload photo</a></span></li>
+            <li tabindex="0" class="icon-Log-out"><span><a href="/logOut">Log out</a></span></li>
         </ul>
     </nav>
-
     <main>
         <div class="helper">
-            RESIZE THE WINDOW
-            <span>Breakpoints on 900px and 400px</span>
+            Welcome to Yoga CMS Admin
         </div>
     </main>
 </main>

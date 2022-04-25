@@ -2,13 +2,17 @@
 
 require_once 'AppController.php';
 require_once __DIR__.'/../models/Localization.php';
+require_once __DIR__.'/../repository/LocalizationRepository.php';
 
 class DefaultController extends AppController {
 
     public function index()
     {
-        $localFields = new Localization();
-        $this->render('info', ['localController' => $localFields->checkFieldsLocalization($_SESSION['loc']) ]);
+        $LocalizationRepository = new LocalizationRepository();
+        $Localization = new Localization();
+
+        $local = $LocalizationRepository->getLocalization();
+        $this->render('info', ['localController' => $Localization->checkFieldsLocalization($local) ]);
     }
     public function login()
     {
@@ -16,21 +20,22 @@ class DefaultController extends AppController {
     }
     public function info()
     {
-        $localFields = new Localization();
-        $this->render('info', ['localController' => $localFields->checkFieldsLocalization($_SESSION['loc']) ]);
+        $LocalizationRepository = new LocalizationRepository();
+        $Localization = new Localization();
+        $local = $LocalizationRepository->getLocalization();
+        $this->render('info', ['localController' => $Localization->checkFieldsLocalization($local) ]);
     }
     public function registration()
     {
         $this->render('registration');
     }
 
-    public function adminIndex()
-    {
-        $this->render('adminIndex');
-    }
     public function articlesIndex()
     {
-        $this->render('articlesIndex');
+        $LocalizationRepository = new LocalizationRepository();
+        $Localization = new Localization();
+        $local = $LocalizationRepository->getLocalization();
+        $this->render('articlesIndex', ['localController' => $Localization->checkFieldsLocalization($local) ]);
     }
     public function errorPage()
     {

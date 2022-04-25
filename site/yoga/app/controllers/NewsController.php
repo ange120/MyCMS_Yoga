@@ -1,14 +1,30 @@
 <?php
 
 require_once 'AppController.php';
-require_once __DIR__.'/../models/Localization.php';
+require_once __DIR__ . '/../models/Localization.php';
+require_once __DIR__ . '/../repository/LocalizationRepository.php';
+require_once __DIR__ . '/../repository/NewsArticleRepository.php';
 
 class newsController extends AppController
 {
-    public function news ()
+    public function news()
     {
-        $localFields = new Localization();
+        $LocalizationRepository = new LocalizationRepository();
+        $Localization = new Localization();
 
-        return $this->render('news', ['localController' => $localFields->checkFieldsLocalization($_SESSION['loc']) ]);
+        $local = $LocalizationRepository->getLocalization();
+
+        return $this->render('news', ['localController' => $Localization->checkFieldsLocalization($local)]);
+    }
+
+    public function pageNewsContent ()
+    {
+        $LocalizationRepository = new LocalizationRepository();
+        $local = $LocalizationRepository->getLocalization();
+        $articleNews = new NewsArticleRepository();
+
+        $this->returnInfo($articleNews->getAllNews($local));
+
+
     }
 }

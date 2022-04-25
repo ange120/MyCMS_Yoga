@@ -66,7 +66,7 @@ class UserRepository extends Repository
     public function getInfoUserByUuid($userUuid)
     {
         $stmt = $this->database->prepare('
-            SELECT `name`,`user_name`,`age`,`role`,`email` FROM user_info WHERE uuid = :uuid
+            SELECT `name`,`user_name`,`age`,`role`,`email` FROM users WHERE uuid = :uuid
         ');
 
         $stmt->bindParam(':uuid', $userUuid, PDO::PARAM_STR);
@@ -110,13 +110,17 @@ class UserRepository extends Repository
         return $createUuid;
     }
 
+    public function getListUser ()
+    {
+
+    }
+
     /**
      * @param string $uuid
      * @param array $data
      */
     public function updateInfoUser(string $uuid, array $data)
     {
-        $photo = "public/upload/image/no-photo.jpg";
         $stmt = $this->database->prepare('
            UPDATE `user_info` SET `name` = :name,`user_name` = :user_name,
                                   `age` = :age, `role` = :role,
@@ -124,15 +128,12 @@ class UserRepository extends Repository
                                    WHERE `uuid` = :uuid
         ');
 
-        if(isset($data['photo'])){
-            $photo =  $this->uploadPhoto($data['photo'], $uuid);
-        }
         $stmt->bindParam(':uuid', $uuid, PDO::PARAM_STR);
-        $stmt->bindParam(':name', $data['user_name'], PDO::PARAM_STR);
-        $stmt->bindParam(':user_name', $data['user_surname'], PDO::PARAM_STR);
-        $stmt->bindParam(':age', $data['birthday'], PDO::PARAM_STR);
-        $stmt->bindParam(':role', $data['weight'], PDO::PARAM_STR);
-        $stmt->bindParam(':email', $data['growth'], PDO::PARAM_STR);
+        $stmt->bindParam(':name', $data['name'], PDO::PARAM_STR);
+        $stmt->bindParam(':user_name', $data['user_name'], PDO::PARAM_STR);
+        $stmt->bindParam(':age', $data['age'], PDO::PARAM_STR);
+        $stmt->bindParam(':role', $data['role'], PDO::PARAM_STR);
+        $stmt->bindParam(':email', $data['email'], PDO::PARAM_STR);
 
         $stmt->execute();
     }
@@ -145,12 +146,6 @@ class UserRepository extends Repository
         ');
         $stmt->bindParam(':uuid', $uuid, PDO::PARAM_STR);
         $stmt->execute();
-
-        $stmtInfo = $this->database->prepare('
-            DELETE FROM `user_info` WHERE `uuid` = :uuid
-        ');
-        $stmtInfo->bindParam(':uuid', $uuid, PDO::PARAM_STR);
-        $stmtInfo->execute();
 
     }
 

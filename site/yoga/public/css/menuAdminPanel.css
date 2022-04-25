@@ -5,6 +5,10 @@ body {
     color: #39374d;
     padding-left: 240px;
 }
+a{
+    color: #EEEEEE;
+    text-decoration: none;
+}
 main {
     position: relative;
     height: 100vh;
@@ -70,16 +74,22 @@ main .helper span {
     cursor: pointer;
 }
 .menu ul li.icon-dashboard {
-    background-image: url("http://www.entypo.com/images//gauge.svg");
+    background-image: url("http://www.entypo.com/images/news.svg");
 }
 .menu ul li.icon-customers {
-    background-image: url("http://www.entypo.com/images//briefcase.svg");
+    background-image: url("http://www.entypo.com/images/archive.svg");
 }
 .menu ul li.icon-users {
     background-image: url("http://www.entypo.com/images//users.svg");
 }
+.menu ul li.icon-uploadPhoto {
+    background-image: url("http://www.entypo.com/images/download.svg");
+}
 .menu ul li.icon-settings {
-    background-image: url("http://www.entypo.com/images//tools.svg");
+    background-image: url("http://www.entypo.com/images/documents.svg");
+}
+.menu ul li.icon-Log-out {
+    background-image: url("http://www.entypo.com/images/back.svg");
 }
 .menu ul li:hover {
     background-color: rgba(0,0,0,0.1);
